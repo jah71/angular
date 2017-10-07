@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Pig Latin</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<script src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
+		<script type="text/javascript" src="scripts/piglatin.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="row content" ng-controller="PigLatin">
+				<div class="col-sm-5">
+					<div class="para">Please enter the english word or phrase that you want to convert here:</div>
+					<input type="text" ng-model="textToConvert" ng-model>
+					<button id="convert" class="btn" ng-click="convertToPigLatin()">Convert</button>
+					<div id="error">
+
+					</div>
+					<div class="converted"> Converted word:</div>
+				</div>
+				<div class="past-words col-sm-5">
+					<h4>Previous words:</h4>
+					<ul>
+						<li ng-repeat="word in previousWords | limitTo:10" ng-if="previousWords.length !== 0">
+							{{word}}
+						</li>
+					</ul>
+				</div>
+			</div>
+			<footer>
+				<hr />
+				Jake Harrison - Angular test
+			</footer>
+		</div>
+	</body>
+</html>

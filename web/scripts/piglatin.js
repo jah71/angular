@@ -1,0 +1,62 @@
+function PigLatin($scope) {
+	$scope.previousWords = [];
+	let vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+	const vowelSuffix = "way";
+	const consonantSuffix = "ay";
+
+	$scope.convertToPigLatin = function () {
+		let text = $scope.textToConvert.replace(/[^A-Za-z ]/g, '');
+		let words = text.split(" ");
+		words = words.filter((el) => {return el != "";});
+
+		if (text.length != 0) {
+			let word;
+
+			$scope.previousWords.unshift(compileSentence(words));
+			$scope.textToConvert = '';
+		}
+	}
+
+	function startsWithVowel(word) {
+		return vowels.includes(word.charAt());
+	}
+
+	function convertVowel(word) {
+		return word + vowelSuffix;
+	}
+
+	function convertConsonant(word) {
+		let i = indexFirstVowel(word);
+		if (i !== undefined) {
+			return (word.substring(i, word.length) + word.substring(0, i) + consonantSuffix).toLowerCase();
+		} else {
+			return (word + consonantSuffix).toLowerCase();
+		}
+	}
+
+	function indexFirstVowel(word) {
+		for (let i = 0; i < word.length; i++) {
+			if (vowels.includes(word.charAt(i))) {
+				return i;
+			}
+		}
+	}
+
+	function compileSentence(words) {
+		var sentence = "";
+		words.forEach((word) => {
+			if (startsWithVowel(word)) {
+				sentence += convertVowel(word);
+				if (word != words.length) {
+					sentence += " ";
+				}
+			} else {
+				sentence += convertConsonant(word);
+				if (word != words.length) {
+					sentence += " ";
+				}
+			}
+		});
+		return sentence;
+	}
+}
