@@ -1,5 +1,6 @@
 // Karma configuration
-// Generated on Sat Oct 07 2017 22:30:44 GMT+0100 (GMT Daylight Time)
+
+const babel = require('babel-core');
 
 module.exports = function(config) {
   config.set({
@@ -15,8 +16,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'node_modules/angular/angular.js',
+      'node_modules/angular-mocks/angular-mocks.js',
       'web/scripts/piglatin.js',
+      'test/scripts/piglatin.test.js',
+      './node_modules/phantomjs-polyfill-includes/includes-polyfill.js',
     ],
+
+    plugins: ['karma-jasmine', 'karma-phantomjs-launcher', 'babel-core', 'karma-babel-preprocessor'],
 
 
     // list of files to exclude
@@ -27,6 +34,13 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'web/scripts/*.js': ['babel']
+    },
+
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015']
+      }
     },
 
 
