@@ -1,6 +1,8 @@
-function PigLatin($scope) {
+angular
+.module('app', [])
+.controller('PigLatin', function PigLatinController($scope) {
 	$scope.previousWords = [];
-	let vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+	const vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
 	const vowelSuffix = "way";
 	const consonantSuffix = "ay";
 
@@ -15,7 +17,7 @@ function PigLatin($scope) {
 			$scope.previousWords.unshift(compileSentence(words));
 			$scope.textToConvert = '';
 		}
-	}
+	};
 
 	function startsWithVowel(word) {
 		return vowels.includes(word.charAt());
@@ -47,16 +49,13 @@ function PigLatin($scope) {
 		words.forEach((word) => {
 			if (startsWithVowel(word)) {
 				sentence += convertVowel(word);
-				if (word != words.length) {
-					sentence += " ";
-				}
+				sentence += " ";
 			} else {
 				sentence += convertConsonant(word);
-				if (word != words.length) {
-					sentence += " ";
-				}
+				sentence += " ";
 			}
 		});
+		sentence = sentence.replace(/^[ ]+|[ ]+$/g,'')
 		return sentence;
 	}
-}
+});

@@ -6,7 +6,6 @@ const gulp = require('gulp'),
     watch = require('gulp-watch'),
     openbrowser = require('gulp-open');
 
-
 gulp.task('lint', function() {
     return gulp.src('web/scripts/*.js')
     .pipe(jshint.reporter('jshint-stylish'))
