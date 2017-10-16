@@ -17,7 +17,7 @@ describe('Testing Piglatin app Test Suite', function () {
 		});
 		$scope.convertToPigLatin();
 
-		expect($scope.previousWords[0]).toBe("esttay entencesay");
+		expect($scope.convertedInput).toBe("esttay entencesay");
 	});
 
 	it('should convert a word sentence to pig latin', function () {
@@ -29,7 +29,7 @@ describe('Testing Piglatin app Test Suite', function () {
 		});
 		$scope.convertToPigLatin();
 
-		expect($scope.previousWords[0]).toBe("estwordtay");
+		expect($scope.convertedInput).toBe("estwordtay");
 	});
 
 	it('should store multiple words in the previous words array', function () {
@@ -44,7 +44,7 @@ describe('Testing Piglatin app Test Suite', function () {
 		$scope.textToConvert = "second sentence";
 		$scope.convertToPigLatin();
 
-		expect($scope.previousWords[0]).toBe("econdsay entencesay");
-		expect($scope.previousWords[1]).toBe("irstfay entencesay");
+		expect($scope.convertedInput).toBe("econdsay entencesay");
+		expect($scope.previousWords[0]).toBe("irstfay entencesay");
 	});
 });

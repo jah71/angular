@@ -5,16 +5,21 @@ angular
 	const vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
 	const vowelSuffix = "way";
 	const consonantSuffix = "ay";
+	$scope.convertedInput;
 
 	$scope.convertToPigLatin = function () {
 		let text = $scope.textToConvert.replace(/[^A-Za-z ]/g, '');
 		let words = text.split(" ");
-		words = words.filter((el) => {return el != "";});
+		words = words.filter((el) => {return el != "";}); //prevents duplicate spaces being added
 
 		if (text.length != 0) {
 			let word;
 
-			$scope.previousWords.unshift(compileSentence(words));
+			let sentence = compileSentence(words);
+			if ($scope.convertedInput != undefined) {
+				$scope.previousWords.unshift($scope.convertedInput);
+			}
+			$scope.convertedInput = sentence;
 			$scope.textToConvert = '';
 		}
 	};
