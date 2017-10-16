@@ -13,12 +13,13 @@
 			<div class="row content" ng-controller="PigLatin">
 				<div class="col-sm-5">
 					<div class="para">Please enter the english word or phrase that you want to convert here:</div>
-					<input type="text" ng-model="textToConvert" ng-model>
+					<input type="text" ng-model="textToConvert">
 					<button id="convert" class="btn" ng-click="convertToPigLatin()">Convert</button>
-					<div id="error">
-
+					<div id="error"></div>
+					<div class="converted">
+						<p>Converted word:</p>
 					</div>
-					<div class="converted"> Converted word:</div>
+					<p>{{convertedInput}}</p>
 				</div>
 				<div class="past-words col-sm-5">
 					<h4>Previous words:</h4>
