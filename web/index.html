@@ -9,31 +9,41 @@
 		<script type="text/javascript" src="scripts/piglatin.js"></script>
 	</head>
 	<body>
-		<div class="main">
-			<div class="row content" ng-controller="PigLatin">
-				<div class="col-sm-5">
-					<div class="para">Please enter the english word or phrase that you want to convert here:</div>
-					<input type="text" ng-model="textToConvert">
+		<div class="content" ng-controller="PigLatin">
+			<div class="col-sm-6">
+				<div class="row">
+					<p>Please enter the english word or phrase that you want to convert here:</p>
+				</div>
+				<div class="row">
+					<input type="text" ng-model="textToConvert" class="inp-convert">
 					<button id="convert" class="btn" ng-click="convertToPigLatin()">Convert</button>
+				</div>
+				<div class="row">
 					<div id="error"></div>
-					<div class="converted">
-						<p>Converted word:</p>
-					</div>
+				</div>
+				<div class="row">
+					<h4>Converted word:</h4>
+				</div>
+				<div class="row">
 					<p>{{convertedInput}}</p>
 				</div>
-				<div class="past-words col-sm-5">
+			</div>
+			<div class="col-sm-6">
+				<div class="row">
 					<h4>Previous words:</h4>
-					<ul>
-						<li ng-repeat="word in previousWords | limitTo:10" ng-if="previousWords.length !== 0">
+				</div>
+				<div class="row">
+					<ul class="ul-previoius-words">
+						<li class="li-word" ng-repeat="word in previousWords | limitTo:10" ng-if="previousWords.length !== 0">
 							{{word}}
 						</li>
 					</ul>
 				</div>
 			</div>
-			<footer>
-				<hr />
-				Jake Harrison - Angular test
-			</footer>
 		</div>
+		<footer class="footer">
+			<hr />
+			<p>Angular app created to test out angular</p>
+		</footer>
 	</body>
 </html>

@@ -1,6 +1,5 @@
 body {
     margin: 0 auto;
-    /* max-width: 50em; */
     font-family: "Helvetica", "Arial", sans-serif;
     line-height: 1.5;
     padding: 4em 1em;
@@ -22,24 +21,59 @@ h4 {
     color: black;
 }
 
-.main {
-    background: #F8F8FF;
-}
-.para {
-    margin-bottom: 10px;
+.row {
+    padding-top: 5px;
+    padding-left: 5px;
 }
 
-.past-words {
-    float: right;
+.inp-convert{
+    padding: 0;
 }
+.btn {
+    border-radius: 0px;
+    line-height: 0.9;
+    height: 25px;
+    margin-top: -2px;
+    background: #483D8B;
+    color: white;
+}
+
+.btn:hover {
+    background: #6b5fb9;
+}
+
+.btn:focus {
+    outline:0;
+    color: white;
+}
+
+.btn:active {
+    outline: none;
+    border: none;
+}
+
+.btn:active:focus {
+    outline: none;
+}
+
 
 .content {
     height: 320px;
     overflow-y: hidden;
+    background: #F8F8FF;
 }
 
-.converted {
-    margin-top: 20px;
-    font-size: 18px;
-    color: black;
+.ul-previoius-words {
+    list-style: none;
+}
+
+.li-word {
+    background: white;
+    width: 250px;
+    margin-left: -40px;
+}
+
+.footer {
+    padding-bottom: 10px;
+    padding-left: 5px;
 }
