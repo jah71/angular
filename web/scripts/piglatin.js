@@ -10,7 +10,7 @@ angular
 	$scope.convertToPigLatin = function () {
 		let text = $scope.textToConvert.replace(/[^A-Za-z ]/g, '');
 		let words = text.split(" ");
-		words = words.filter((el) => {return el != "";}); //prevents duplicate spaces being added
+		words = words.filter((el) => {return el != "";}); //prevents multiple spaces being added
 
 		if (text.length != 0) {
 			let word;
