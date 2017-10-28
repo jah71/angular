@@ -7,14 +7,14 @@ describe('Testing Piglatin app Test Suite', function () {
 		inject(function(_$controller_) {
 			$controller = _$controller_;
 		});
-		$scope = {};
-	  });
 
-	it('should convert a test sentence to pig latin', function () {
+		$scope = {};
 		var controller = $controller('PigLatin', {
 			$scope: $scope
 		});
+	  });
 
+	it('should convert a test sentence to pig latin', function () {
 		$scope.textToConvert = "test sentence";
 		$scope.convertToPigLatin();
 
@@ -22,10 +22,6 @@ describe('Testing Piglatin app Test Suite', function () {
 	});
 
 	it('should convert a word sentence to pig latin', function () {
-		var controller = $controller('PigLatin', {
-			$scope: $scope
-		});
-
 		$scope.textToConvert = "testWord";
 		$scope.convertToPigLatin();
 
@@ -33,10 +29,6 @@ describe('Testing Piglatin app Test Suite', function () {
 	});
 
 	it('should store multiple words in the previous words array', function () {
-		var controller = $controller('PigLatin', {
-			$scope: $scope
-		});
-
 		$scope.textToConvert = "first sentence";
 		$scope.convertToPigLatin();
 
