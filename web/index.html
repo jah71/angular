@@ -9,6 +9,9 @@
 		<script type="text/javascript" src="scripts/piglatin.js"></script>
 	</head>
 	<body>
+		<header class="header">
+			<h2>Convert English to Piglatin</h2>
+		</header>
 		<div class="content" ng-controller="PigLatin">
 			<div class="col-sm-6">
 				<div class="row">
@@ -35,15 +38,14 @@
 				<div class="row">
 					<ul class="ul-previoius-words">
 						<li class="li-word" ng-repeat="word in previousWords | limitTo:10" ng-if="previousWords.length !== 0">
-							{{word}}
+							<p class="previous-word">{{word}}</p>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<footer class="footer">
-			<hr />
-			<p>Angular app created to test out angular</p>
+			<p>Angular app created to test out angular 1</p>
 		</footer>
 	</body>
 </html>
