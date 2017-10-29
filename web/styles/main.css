@@ -12,8 +12,14 @@ h1 {
     padding-top: 1em;
 }
 
-h1, h2, strong {
+h1, strong {
     color: #333;
+}
+
+h2 {
+    color: cornflowerblue;
+    margin-bottom: 0;
+    padding-left: 5px;
 }
 
 h4 {
@@ -65,15 +71,29 @@ h4 {
 
 .ul-previoius-words {
     list-style: none;
+    width: 250px;
+
 }
 
 .li-word {
     background: white;
-    width: 250px;
     margin-left: -40px;
+    /* border-bottom: 1px solid gray; */
+}
+
+.header {
+    background: #DFDFFF;
 }
 
 .footer {
     padding-bottom: 10px;
+    padding-left: 5px;
+    background: #DFDFFF;
+    text-align: center;
+    color: gray;
+}
+
+.previous-word {
+    margin: 0;
     padding-left: 5px;
 }
