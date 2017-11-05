@@ -72,13 +72,14 @@ h4 {
 .ul-previoius-words {
     list-style: none;
     width: 250px;
-
+    border-bottom: 1px solid lightgray;
 }
 
 .li-word {
     background: white;
     margin-left: -40px;
-    /* border-bottom: 1px solid gray; */
+    border: 1px solid lightgray;
+    border-bottom: 0;
 }
 
 .header {
