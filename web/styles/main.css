@@ -2,9 +2,8 @@ body {
     margin: 0 auto;
     font-family: "Helvetica", "Arial", sans-serif;
     line-height: 1.5;
-    padding: 4em 1em;
-    color: #555;
-    width: 800px;
+    width: 50%;
+    box-shadow: 3px 3px 12px #E0E0E0;
 }
 
 h1 {
@@ -17,14 +16,20 @@ h1, strong {
 }
 
 h2 {
-    color: cornflowerblue;
+    color: black;
     margin-bottom: 0;
-    padding-left: 5px;
+    padding: 15px 0 15px 15px;
 }
 
 h4 {
     margin-top: 0;
-    color: black;
+    color: 9C27B0;
+}
+
+.content {
+    min-height: 500px;
+    overflow-y: hidden;
+    background: #F3E5F5;
 }
 
 .row {
@@ -40,12 +45,13 @@ h4 {
     line-height: 0.9;
     height: 25px;
     margin-top: -2px;
-    background: #483D8B;
+    background: #BA68C8;
     color: white;
 }
 
 .btn:hover {
-    background: #6b5fb9;
+    background: #AB47BC;
+    color: white;
 }
 
 .btn:focus {
@@ -53,44 +59,31 @@ h4 {
     color: white;
 }
 
-.btn:active {
-    outline: none;
-    border: none;
-}
-
 .btn:active:focus {
     outline: none;
-}
-
-
-.content {
-    height: 320px;
-    overflow-y: hidden;
-    background: #F8F8FF;
 }
 
 .ul-previoius-words {
     list-style: none;
     width: 250px;
-
+    border-bottom: 1px solid lightgray;
 }
 
 .li-word {
     background: white;
     margin-left: -40px;
-    /* border-bottom: 1px solid gray; */
+    border: 1px solid lightgray;
+    border-bottom: 0;
 }
 
 .header {
-    background: #DFDFFF;
+    background: #E1BEE7;
 }
 
 .footer {
-    padding-bottom: 10px;
-    padding-left: 5px;
-    background: #DFDFFF;
+    background: #E1BEE7;
     text-align: center;
-    color: gray;
+    color: black;
 }
 
 .previous-word {

@@ -38,4 +38,18 @@ describe('Testing Piglatin app Test Suite', function () {
 		expect($scope.convertedInput).toBe("econdsay entencesay");
 		expect($scope.previousWords[0]).toBe("irstfay entencesay");
 	});
+
+	it('should preserve the position of basic punctuation', function () {
+		$scope.textToConvert = "bang!";
+		$scope.convertToPigLatin();
+
+		expect($scope.convertedInput).toBe("angbay!");
+	});
+
+	it('should preserve the position of basic punctuation in a sentence', function () {
+		$scope.textToConvert = "test! punctuation, in. a? sentence";
+		$scope.convertToPigLatin();
+
+		expect($scope.convertedInput).toBe("esttay! unctuationpay, inway. away? entencesay");
+	});
 });

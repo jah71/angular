@@ -40,7 +40,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('webserver', function () {
-  var options = {
+  let options = {
     port: 8080,
     livereload: true,
     root: 'dist/',
