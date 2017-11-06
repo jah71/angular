@@ -10,7 +10,10 @@ angular
 	$scope.convertedInput = '';
 
 	$scope.convertToPigLatin = () => {
-		let text = $scope.textToConvert.replace(/[^A-Za-z ,.!?]/g, ''); //strips out potentially harmful characters
+		let text = '';
+		if ($scope.textToConvert != undefined) {
+			text = $scope.textToConvert.replace(/[^A-Za-z ,.!?]/g, ''); //strips out potentially harmful characters
+		}
 		let words = text.split(" ");
 		words = words.filter((el) => {return el != "";}); //prevents multiple spaces being added
 
