@@ -13,9 +13,9 @@
 			<h2>Convert English to Piglatin</h2>
 		</header>
 		<div class="content" ng-controller="PigLatin">
-			<div class="col-sm-6">
+			<div class="col-sm-12">
 				<div class="row">
-					<p>Please enter the english word or phrase that you want to convert here:</p>
+					<p class="main-text">Please enter the english word or phrase that you want to convert here:</p>
 				</div>
 				<div class="row">
 					<input type="text" ng-model="textToConvert" class="inp-convert">
@@ -28,20 +28,24 @@
 				<div class="row">
 					<h4>Converted word:</h4>
 				</div>
-				<div class="row">
+				<div class="row converted-word">
 					<p>{{convertedInput}}</p>
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-12">
 				<div class="row">
 					<h4>Previous words:</h4>
 				</div>
 				<div class="row">
-					<ul class="ul-previoius-words">
-						<li class="li-word" ng-repeat="word in previousWords | limitTo:10" ng-if="previousWords.length !== 0">
-							<p class="previous-word">{{word}}</p>
-						</li>
-					</ul>
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+						<ul class="ul-previoius-words">
+							<li class="li-word" ng-repeat="word in previousWords | limitTo:10" ng-if="previousWords.length !== 0">
+								<p class="previous-word">{{word}}</p>
+							</li>
+						</ul>
+					</div>
+					<div class="col-sm-3"></div>
 				</div>
 			</div>
 		</div>
