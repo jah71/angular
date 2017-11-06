@@ -74,11 +74,10 @@ angular
 		words.forEach((word) => {
 			if (startsWithVowel(word)) {
 				sentence += convertVowel(word);
-				sentence += " ";
 			} else {
 				sentence += convertConsonant(word);
-				sentence += " ";
 			}
+			sentence += " ";
 		});
 		sentence = sentence.replace(/^[ ]+|[ ]+$/g,'')
 		return sentence;

@@ -5,6 +5,7 @@ const gulp = require('gulp'),
   connect = require('gulp-connect'),
   watch = require('gulp-watch'),
   openbrowser = require('gulp-open'),
+  babel = require("gulp-babel"),
   server = require('karma').Server;
 
 gulp.task('lint', function () {
@@ -32,6 +33,12 @@ gulp.task('copyhtml', function () {
     .pipe(gulp.dest('./dist/web/'))
     .pipe(connect.reload());
 });
+
+gulp.task("default", function () {
+  return gulp.src("web/scripts/*.js")
+    .pipe(babel())
+    .pipe(gulp.dest('./dist/web/'));
+  });
 
 gulp.task('watch', function () {
   gulp.watch(['web/*.html'], ['copyhtml']);
@@ -62,4 +69,4 @@ gulp.task('open', ['webserver'], function () {
     }));
 });
 
-gulp.task('dev', ['copyhtml', 'styles', 'lint', 'open', 'watch', 'test'], function () { });
+gulp.task('dev', ['copyhtml', 'styles', 'default', 'lint', 'open', 'watch', 'test'], function () { });
